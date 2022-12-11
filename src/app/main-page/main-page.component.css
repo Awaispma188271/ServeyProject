@@ -9,22 +9,28 @@
     background-position: center;
     z-index: 15;
 }
+/* .logoimg{
+    position: relative;
+    z-index: 100;
+    width: 100px;
+} */
 .nfcsurvey{
-    z-index: 20;
+    
     position: absolute;
+    width: 130px;
+    height: 130px;
     top: 20px;
     left: 40px;
-    color: white;
-    text-transform: uppercase;
-
+    border-radius: 65px;
+    z-index: 20;
 }
 .information{
     position: absolute;
     left: 17%;
-    top: 30%;
+    top: 25%;
     z-index: 100;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 .main-bt::after{

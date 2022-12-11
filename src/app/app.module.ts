@@ -16,6 +16,7 @@ import { StudentResponseComponent } from './AdminPannel/student-response/student
 import { StudentChartComponent } from './AdminPannel/student-chart/student-chart.component';
 import { EmployeeResponseComponent } from './AdminPannel/employee-response/employee-response.component';
 import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-chart.component';
+//import { NgxChartModule } from 'ngx-chart';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-ch
     StudentResponseComponent,
     StudentChartComponent,
     EmployeeResponseComponent,
-    EmployeeChartComponent
+    EmployeeChartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,8 @@ import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-ch
     RouterModule,
     FormsModule,
     CommonModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

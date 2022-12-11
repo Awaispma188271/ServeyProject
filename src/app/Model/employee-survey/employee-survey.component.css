@@ -1,55 +1,90 @@
-.sur_form{
-    width: 80%;
-    margin: 0 auto;
+.main {
+  width: 630px;
+  height: auto;
 
+  border-radius: 25px;
+  margin: 150px auto;
 }
-.head{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 5px 10px;
+.nfcsurvey{
+    
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 50px;
+  left: 40px;
+  border-radius: 65px;
+  z-index: 20;
 }
-.cantainer_heading{
-    width: 60%;
+.surveysvg{
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 50px;
+  right: 40px;
+  border-radius: 65px;
+  z-index: 20;
 }
-.cantainer_header{
-    width: 40%;
+.info {
+  width: 600px;
+  height: auto;
+  margin: 0px auto;
 }
-.cantainer_header ul{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.btnCon {
+  position: relative;
+  top: 0;
+  left: 13rem;
+  width: 25%;
+}
 
+.sur_form {
+  width: 80%;
+  margin: 0 auto;
 }
-.cantainer_header ul li{
-    margin-left: 44px;
-
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 5px 10px;
 }
-.questions{
-    border: 2px solid black;
+.cantainer_heading {
+  width: 60%;
 }
-.question{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
+.cantainer_header {
+  width: 40%;
 }
-.answer{
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cantainer_header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.cantainer_header ul li {
+  margin-left: 44px;
+}
+.questions {
+  border: 2px solid black;
+}
+.question {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.answer {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /* .answer .ans_input{
     margin: 0 0 0 20px;
 } */
-.label{
-    width: 70%;
+.label {
+  width: 70%;
 }
 
-.btn1{
-    float:right;
+.btn1 {
+  float: right;
 }

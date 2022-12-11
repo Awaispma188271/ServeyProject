@@ -11,6 +11,7 @@ import { SurveyComponent } from './Model/survey/survey.component';
 import { StudentResponseComponent } from './AdminPannel/student-response/student-response.component';
 import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-chart.component';
 import { EmployeeResponseComponent } from './AdminPannel/employee-response/employee-response.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,11 @@ const routes: Routes = [
     path: 'student-chart',
     component: StudentChartComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'chart',
+    component: ChartComponent,
+    
   },
   {
     path: 'employee-Response',

@@ -1,3 +1,42 @@
+.main{   
+    width: 630px;
+    height: auto;
+    border-radius: 25px;
+    margin:150px auto;
+    /* background-color: black; */
+}
+.surveysvg{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 50px;
+    right: 40px;
+    border-radius: 65px;
+    z-index: 20;
+}
+
+.nfcsurvey{
+    
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 50px;
+    left: 40px;
+    border-radius: 65px;
+    z-index: 20;
+}
+.info{
+    width: 600px;
+    height: auto;
+    margin:0px auto;
+}
+.btnCon{
+    position: relative;
+    top: 0;
+    left: 13rem;
+    width: 25%;
+}
+
 .sur_form{
     width: 80%;
     margin: 0 auto;

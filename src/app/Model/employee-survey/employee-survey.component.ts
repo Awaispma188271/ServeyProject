@@ -18,6 +18,9 @@ export class EmployeeSurveyComponent implements OnInit {
   surveyData: any[] = [];
   Email: string = '';
   value: any;
+  isContinue:boolean=false;
+  isSurvey:boolean=true;
+
 
   constructor(
     private serveyService: ServeyServiceService,
@@ -49,13 +52,14 @@ export class EmployeeSurveyComponent implements OnInit {
       Question_19: ['', Validators.required],
 
       Email: ['', Validators.compose([Validators.required, Validators.email])],
-
       Organization_Name: ['', Validators.compose([])],
+      Department: ['', Validators.compose([])],
+      Contact_no: ['', Validators.compose([])],
       Bussiness_Type: ['', Validators.compose([])],
       NoOfGraduate: ['', Validators.compose([])],
     });
 
-    this.userName = this.EmployeeSurveyForm.value.Email;
+    this.userName = this.EmployeeSurveyForm.value;
     console.log('userName', this.userName);
   }
   onSubmit() {
@@ -71,6 +75,10 @@ export class EmployeeSurveyComponent implements OnInit {
 
   isLogin() {
     this.route.navigate(['/AdminLogin']);
+  }
+  Continue(){
+    this.isContinue=true;
+    this.isSurvey=false;
   }
 
   get email(): FormGroup {

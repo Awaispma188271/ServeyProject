@@ -1,58 +1,57 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServeyServiceService {
-
   private baseURL: string = 'https://localhost:44314/api/Survey/';
   currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
-  //jwtHelperService = new JwtHelperService();
+  jwtHelperService = new JwtHelperService();
   constructor(private http: HttpClient, private route: Router) {}
-  
 
-  public Student_Servey(user: User){
+  public Student_Servey(user: User) {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
     return this.http.post(this.baseURL + 'CreateStudentSurvey', user);
   }
 
-  public Employee_Servey(user: User){
+  public Employee_Servey(user: User) {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
     return this.http.post(this.baseURL + 'CreateEmployeeSurvey', user);
   }
 
-  public getStudentRes(){
+  public getStudentRes(Id: any) {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.get(this.baseURL + 'GetAllStudent');
+    return this.http.get(this.baseURL + 'GetAllStudent/' + Id);
   }
 
-  public getEmployeeRes(){
+  public getEmployeeRes(Id: any) {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.get(this.baseURL + 'GetAllEmployee');
+    return this.http.get(this.baseURL + 'GetAllEmployee/' + Id);
   }
 
   login(user: Array<string>): Observable<any> {
-   
-
     return this.http.post(
-      this.baseURL + 'loginAdmin', {
+      this.baseURL + 'loginAdmin',
+      {
         email: user[0],
-        password:user[1]
-      },{
-        responseType:'text',
+        password: user[1],
+        department: user[1],
+      },
+      {
+        responseType: 'text',
       }
-    
     );
   }
 
@@ -61,13 +60,18 @@ export class ServeyServiceService {
     // this.loadCurrentUser();
   }
 
-
   isLoggin(): boolean {
     return localStorage.getItem('Token') ? true : false;
   }
   isLogOut() {
     localStorage.removeItem('Token');
     this.route.navigateByUrl('/AdminLogin');
+  }
+  public getDecodedToken(): any {
+    var token: any = localStorage.getItem('Token');
+
+    var decodedToken = this.jwtHelperService.decodeToken(token);
+    return decodedToken.Email;
   }
 
   /*
@@ -154,32 +158,32 @@ export class ServeyServiceService {
 }
 
 export class User {
-  Question_1!:string;
-  Question_2!:string;
-  Question_3!:string;
-  Question_4!:string;
-  Question_5!:string;
-  Question_6!:string;
-  Question_7!:string;
-  Question_8!:string;
-  Question_9!:string;
-  Question_10!:string;
-  Question_11!:string;
-  Question_12!:string;
-  Question_13!:string;
-  Question_14!:string;
-  Question_15!:string;
-  Question_16!:string;
-  Question_17!:string;
-  Question_18!:string;
-  Question_19!:string;
-  Question_20!:string;
-  Question_21!:string;
-  StudentName!:string;
-  Organization_Name!:string;
-  Organization_Position!:string;
-  Graduation_year!:number;
- 
-  Email!: string;
+  Question_1!: string;
+  Question_2!: string;
+  Question_3!: string;
+  Question_4!: string;
+  Question_5!: string;
+  Question_6!: string;
+  Question_7!: string;
+  Question_8!: string;
+  Question_9!: string;
+  Question_10!: string;
+  Question_11!: string;
+  Question_12!: string;
+  Question_13!: string;
+  Question_14!: string;
+  Question_15!: string;
+  Question_16!: string;
+  Question_17!: string;
+  Question_18!: string;
+  Question_19!: string;
+  Question_20!: string;
+  Question_21!: string;
+  StudentName!: string;
+  Department!: string;
+  Organization_Name!: string;
+  Organization_Position!: string;
+  Graduation_year!: number;
 
+  Email!: string;
 }

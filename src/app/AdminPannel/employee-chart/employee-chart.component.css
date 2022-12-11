@@ -1,0 +1,43 @@
+ /* .container, #canvas,#canvas2,#canvas3,#canvas4,#canvas5,#canvas6,#canvas7,#canvas8,#canvas9,#canvas10,#canvas11,#canvas12,#canvas13,#canvas14,#canvas15,#canvas16,#canvas17,#canvas18,#canvas19,#canvas20,#canvas21{
+    width: 900px !important;
+    height: 600px !important;
+    margin: 0px auto;
+}   */
+/* h1{
+    text-align: center;
+    margin-top: 5rem;
+} */
+*{
+    box-sizing: border-box;
+}
+
+.chartitemcan{
+    
+    width: 100%;
+    margin: 20px 0 0 0 ;
+    padding: 30px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.chartCan{
+    width: 18%;
+    background-color: azure;
+    margin-bottom: 10px;
+    padding: 25px 15px;
+    border-radius: 10px;
+}
+.btnmain{
+    margin: 30px 0 20px 100px;
+    padding: 8px 25px;
+}
+.chartCan h1{
+    text-align: center;
+    font-size: 1.7rem;
+}
+/* .item{
+    width: 20%;
+} */

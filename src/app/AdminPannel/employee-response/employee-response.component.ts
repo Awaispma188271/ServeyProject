@@ -10,7 +10,7 @@ import * as XLSX from 'xlsx';
   providers:[ServeyServiceService]
 })
 export class EmployeeResponseComponent implements OnInit {
-
+  id:any;
   public Students!: any;
   //public IsApproved!: boolean;
   fileName= 'ExcelSheet.xlsx';
@@ -23,7 +23,8 @@ export class EmployeeResponseComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-      this.serveyService.getEmployeeRes().subscribe(res=>{
+    this.id = this.serveyService.getDecodedToken();
+      this.serveyService.getEmployeeRes(this.id ).subscribe(res=>{
         this.Students=res;
       })
 

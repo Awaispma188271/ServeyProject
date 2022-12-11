@@ -1,13 +1,20 @@
 <div class="tab-content">
-    <h2>Student Responses</h2>
-    <button class="btn btn-success my-2" (click)="exportexcel()">Download Excel</button>
-    <button class="btn btn-success my-2" (click)="studentChart()">Generate Char</button>
-    <table class="table table-dark table-striped" id="excel-table">
+    <h2 style="margin: 20px 30px;">Employee Responses</h2>
+    <div style="margin: 20px 30px;">
+      <button class="btn btn-success mx-2 my-2" (click)="exportexcel()">Download Excel</button>
+      <button class="btn btn-success mx-2" (click)="studentChart()">Generate Chart</button>
+    </div>
+    
+    <table class="table table-dark table-bordered" id="excel-table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Orgnization</th>
+          <th scope="col">#</th>   
+          <th scope="col">Organization_Name</th>    
+          <th scope="col">Email</th>  
+          <th scope="col">Department</th>  
+          <th scope="col">Bussiness_Type</th>
+          <th scope="col">NoOfGraduate</th>
+          <th scope="col">Contact_no</th>  
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
           <th scope="col">Q3</th>
@@ -31,9 +38,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let student of Students">
-          <th scope="row">{{ student.Id }}</th>
-          <td>{{ student.StudentName }}</td>
+          <th scope="row">{{ student.Id }}</th> 
           <td>{{ student.Organization_Name }}</td>
+          <td>{{ student.Email}}</td>    
+          <td>{{ student.Department }}</td>    
+          <td>{{ student.Bussiness_Type }}</td>
+          <td>{{ student.NoOfGraduate }}</td>
+          <td>{{ student.Contact_no }}</td>         
           <td>{{ student.Question_1 }}</td>
           <td>{{ student.Question_2 }}</td>
           <td>{{ student.Question_3 }}</td>
