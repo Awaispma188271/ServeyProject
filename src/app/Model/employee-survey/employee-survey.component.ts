@@ -50,9 +50,8 @@ export class EmployeeSurveyComponent implements OnInit {
       Question_17: ['', Validators.required],
       Question_18: ['', Validators.required],
       Question_19: ['', Validators.required],
-
-      Email: ['', Validators.compose([Validators.required, Validators.email])],
       Organization_Name: ['', Validators.compose([])],
+      Email: ['', Validators.compose([Validators.required, Validators.email])],
       Department: ['', Validators.compose([])],
       Contact_no: ['', Validators.compose([])],
       Bussiness_Type: ['', Validators.compose([])],

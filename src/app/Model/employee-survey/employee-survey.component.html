@@ -1,11 +1,10 @@
+<img src="assets/mainlogo.jpg" alt="" class="nfcsurvey" />
 
-<img src="assets/mainlogo.jpg" alt="" class="nfcsurvey">
-<img src="assets/mainlogo.jpg" alt="" class="surveysvg">
 <form [formGroup]="EmployeeSurveyForm" class="sur_form">
   <div class="main">
     <div class="info" *ngIf="isSurvey">
       <h1 class="mt-3">Basis Information</h1>
-      
+
       <div class="mb-3">
         <label for="Organization_Name" class="form-label"
           >Organization_Name</label
@@ -30,8 +29,11 @@
       </div>
       <div class="mb-3">
         <label for="Department" class="form-label">Department</label>
-        <select class="form-select" aria-label="Default select example" formControlName="Department">
-          
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="Department"
+        >
           <option value="Computer Science">Computer Science</option>
           <option value="Chemical">Chemical</option>
           <option value="Electrical">Electrical</option>
@@ -60,7 +62,7 @@
           formControlName="NoOfGraduate"
         />
       </div>
-      
+
       <div class="mb-3">
         <label for="Contact_no" class="form-label">Contact_no</label>
         <input
@@ -72,7 +74,18 @@
         />
       </div>
 
-      <button class="btn btn-success mb-3 btnCon" (click)="Continue()" [disabled]="!EmployeeSurveyForm.value.Department">
+      <button
+        class="btn btn-success mb-3 btnCon"
+        (click)="Continue()"
+        [disabled]="
+        !EmployeeSurveyForm.value.Organization_Name ||
+          !EmployeeSurveyForm.value.Department ||
+          !EmployeeSurveyForm.value.Contact_no ||
+          !EmployeeSurveyForm.value.NoOfGraduate ||
+          !EmployeeSurveyForm.value.Bussiness_Type ||
+          !EmployeeSurveyForm.value.Email
+        "
+      >
         Continue
       </button>
     </div>
@@ -1111,6 +1124,12 @@
       </div>
     </div>
 
-    <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+    <button
+      class="btn btn-success mb-3"
+      (click)="onSubmit()"
+      [disabled]="!EmployeeSurveyForm.valid"
+    >
+      Submit
+    </button>
   </div>
 </form>
