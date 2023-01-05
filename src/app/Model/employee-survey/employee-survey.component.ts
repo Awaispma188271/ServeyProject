@@ -50,12 +50,20 @@ export class EmployeeSurveyComponent implements OnInit {
       Question_17: ['', Validators.required],
       Question_18: ['', Validators.required],
       Question_19: ['', Validators.required],
-      Organization_Name: ['', Validators.compose([])],
-      Email: ['', Validators.compose([Validators.required, Validators.email])],
-      Department: ['', Validators.compose([])],
+      //Evaluator Information
+      EvaluatorName: ['', Validators.compose([])],
+      Designation_Evaluator: ['', Validators.compose([])],
+      Organization_Name: ['', Validators.compose([])],      
       Contact_no: ['', Validators.compose([])],
-      Bussiness_Type: ['', Validators.compose([])],
-      NoOfGraduate: ['', Validators.compose([])],
+      Email: ['', Validators.compose([Validators.required, Validators.email])],
+      //Graduate Information
+      EmployerName: ['', Validators.compose([])],
+      Designation_Employer: ['', Validators.compose([])],
+      Registration_no: ['', Validators.compose([])],
+      Job_Level: ['', Validators.compose([])],
+      Department: ['', Validators.compose([])],
+      
+      
     });
 
     this.userName = this.EmployeeSurveyForm.value;

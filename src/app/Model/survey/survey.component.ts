@@ -52,12 +52,15 @@ export class SurveyComponent implements OnInit {
       Question_20: ['', Validators.required],
       Question_21: ['', Validators.required],
       StudentName: ['', Validators.compose([])],
-      Email: ['', Validators.compose([Validators.required, Validators.email])],
+      Registration_no: ['', Validators.compose([])],
+      CNIC_no: ['', Validators.compose([])],      
+      Contact_no: ['', Validators.compose([])],
+      Email: ['', Validators.compose([Validators.required, Validators.email])],     
+      Employment_Status: ['', Validators.compose([])],
       Organization_Name: ['', Validators.compose([])],
       Organization_Position: ['', Validators.compose([])],
       Department: ['', Validators.compose([])],
-      Registration_no: ['', Validators.compose([])],
-      Contact_no: ['', Validators.compose([])],
+     
     });
 
     

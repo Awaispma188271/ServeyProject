@@ -9,11 +9,15 @@
       <thead>
         <tr>
           <th scope="col">#</th>   
+          <th scope="col">Evaluator_Name</th> 
+          <th scope="col">Evaluator_Designation</th> 
+          <th scope="col">Employee_Name</th>
+          <th scope="col">Employee_Designation</th> 
           <th scope="col">Organization_Name</th>    
           <th scope="col">Email</th>  
           <th scope="col">Department</th>  
-          <th scope="col">Bussiness_Type</th>
-          <th scope="col">NoOfGraduate</th>
+          <th scope="col">Job Level</th>
+          <th scope="col">Registration_no</th>
           <th scope="col">Contact_no</th>  
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
@@ -39,11 +43,15 @@
       <tbody>
         <tr *ngFor="let student of Students">
           <th scope="row">{{ student.Id }}</th> 
+          <td>{{ student.EvaluatorName}}</td>
+          <td>{{ student.Designation_Evaluator}}</td>
+          <td>{{ student.EmployerName}}</td>
+          <td>{{ student.Designation_Employer}}</td>
           <td>{{ student.Organization_Name }}</td>
           <td>{{ student.Email}}</td>    
           <td>{{ student.Department }}</td>    
-          <td>{{ student.Bussiness_Type }}</td>
-          <td>{{ student.NoOfGraduate }}</td>
+          <td>{{ student.Job_Level }}</td>
+          <td>{{ student.Registration_no }}</td>
           <td>{{ student.Contact_no }}</td>         
           <td>{{ student.Question_1 }}</td>
           <td>{{ student.Question_2 }}</td>

@@ -5,7 +5,7 @@
     <div class="info" *ngIf="isSurvey">
       <h1 class="mt-3">Basic Information</h1>
       <div class="mb-3">
-        <label for="StudentName" class="form-label">StudentName</label>
+        <label for="StudentName" class="form-label">Name</label>
         <input
           type="text"
           class="form-control"
@@ -14,9 +14,30 @@
           formControlName="StudentName"
         />
       </div>
-
       <div class="mb-3">
-        <label for="UserName" class="form-label">Email</label>
+        <label for="Registration_no" class="form-label"
+          >UET Registration #</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="Registration_no"
+          aria-describedby="emailHelp"
+          formControlName="Registration_no"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="CNIC_no" class="form-label">CNIC no</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CNIC_no"
+          aria-describedby="emailHelp"
+          formControlName="CNIC_no"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UserName" class="form-label">Email Address</label>
         <input
           type="text"
           class="form-control"
@@ -38,30 +59,6 @@
         </div>
       </div>
       <div class="mb-3">
-        <label for="Organization_Name" class="form-label"
-          >Organization_Name</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="Organization_Name"
-          aria-describedby="emailHelp"
-          formControlName="Organization_Name"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="Organization_Position" class="form-label"
-          >Organization_Position</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="Organization_Position"
-          aria-describedby="emailHelp"
-          formControlName="Organization_Position"
-        />
-      </div>
-      <div class="mb-3">
         <label for="Department" class="form-label">Department</label>
         <select
           class="form-select"
@@ -76,19 +73,8 @@
           <option value="BBA">BBA</option>
         </select>
       </div>
-
       <div class="mb-3">
-        <label for="Registration_no" class="form-label">Registration_no</label>
-        <input
-          type="text"
-          class="form-control"
-          id="Registration_no"
-          aria-describedby="emailHelp"
-          formControlName="Registration_no"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="Contact_no" class="form-label">Contact_no</label>
+        <label for="Contact_no" class="form-label">Contact no.</label>
         <input
           type="text"
           class="form-control"
@@ -97,6 +83,45 @@
           formControlName="Contact_no"
         />
       </div>
+      <div class="mb-3">
+        <label for="Employment_Status" class="form-label"
+          >Employment Status</label
+        >
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="Employment_Status"
+        >
+          <option value="Employed">Employed</option>
+          <option value="Self Employed">Self Employed</option>
+          <option value="UnEmployed">UnEmployed</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="Organization_Name" class="form-label"
+          >Current Organization</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="Organization_Name"
+          aria-describedby="emailHelp"
+          formControlName="Organization_Name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Organization_Position" class="form-label"
+          >Current Position in Organization</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="Organization_Position"
+          aria-describedby="emailHelp"
+          formControlName="Organization_Position"
+        />
+      </div>
+
       <button
         class="btn btn-success mb-3 btnCon"
         (click)="Continue()"
@@ -105,10 +130,14 @@
           !SurveyForm.value.Department ||
           !SurveyForm.value.Contact_no ||
           !SurveyForm.value.Registration_no ||
-          !SurveyForm.value.Email
+          !SurveyForm.value.Email ||
+          !SurveyForm.value.CNIC_no ||
+          !SurveyForm.value.Employment_Status ||
+          !SurveyForm.value.Organization_Name ||
+          !SurveyForm.value.Organization_Position
         "
       >
-        Continue
+        Proceed to Survey
       </button>
     </div>
   </div>
