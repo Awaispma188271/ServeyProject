@@ -4,34 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px 30px;
     background-image: url('abg.jpg');
     background-size: cover;
     background-position: center;
     z-index: 15;
-}
-/* .logoimg{
-    position: relative;
-    z-index: 100;
-    width: 100px;
-} */
-.nfcsurvey{
-    
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    top: 20px;
-    left: 40px;
-    border-radius: 65px;
-    z-index: 20;
-}
-.information{
-    position: absolute;
-    left: 17%;
-    top: 25%;
-    z-index: 100;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
 }
 .main-bt::after{
     content:"";
@@ -44,11 +23,89 @@
     opacity: .7;
 
 }
+/* .logoimg{
+    position: relative;
+    z-index: 100;
+    width: 100px;
+} */
+.nfcsurvey{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 20px;
+    left: 40px;
+    border-radius: 65px;
+    z-index: 20;
+}
+.information{
+    z-index: 100;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.btn-can{
+    width: 100%;
+}
 .btn{
     z-index: 100;
-    width: 30%;
-    height: 10rem;
-    font-size: 2rem;
+    width: 100%;
+    height: 5rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    margin-top: 1rem;
     text-transform: uppercase;
+}
+@media (min-width:320px){
+    .nfcsurvey{
+        width: 70px;
+        height: 70px;
+    }
+    .info-heading{
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .btn-can{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+        z-index: 100;
+    }
+    
+    .information p{
+        font-size: 1rem;
+    }
+}
+@media (min-width:430px){
+    .nfcsurvey{
+        width: 100px;
+        height: 100px;
+    }
+    .info-heading{
+        font-size: 3rem;
+    }
+  
+    .information p{
+        font-size: 1.4rem;
+    }
+}
+@media (min-width:780px){
+    .nfcsurvey{
+        width: 120px;
+        height: 120px;
+    }
+    .info-heading{
+        font-size: 3rem;
+    }
+    .btn-can{
+        flex-direction: row;
+    }
+    .btn{
+        width: 40%;
+        height: 7rem;
+    }
+    .information p{
+        font-size: 1.6rem;
+    }
 }
