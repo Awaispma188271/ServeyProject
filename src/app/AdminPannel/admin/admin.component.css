@@ -3,35 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-body{
-    
-    font-family: arial, sans-serif;
-    background: #2c3e50;
-
-   
-}
-
-h1 {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    padding: 0;
-    margin: 30px 0;
-    color: #fff;
-}
-
-
- .tab-wrap {
-    width: 90%;
-    list-style: none;
-    text-align: left;
-    padding: 0;
-    /* margin: 30px 0 0 50px; */
-    position: relative;
-    z-index: 100;
-
-}
 .main_admin{
     background-image: url('main.jpg');
     background-repeat: no-repeat;
@@ -39,9 +10,11 @@ h1 {
     width: 100%;
     height: 100vh;
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
-    padding: 50px 0 0 200px;
+    /* padding: 50px 0 0 200px; */
+    /* overflow: hidden; */
+    margin: 0;
     position: relative;
 }
 .nfcsurvey{
@@ -64,57 +37,119 @@ h1 {
     background-color: black;
     opacity: .7;
 }
-.tab-wrap input[type="radio"] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
 
-.tab-wrap li {
-    float: left;
-    display: block;
-}
 
-.tab-wrap label {
-    background: rgb(5, 165, 165);
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
-     color: inherit; 
-    text-decoration: none;
-    display: inline-block;
-    border-radius:5px;
-    margin: 0 10px 0 0px;
-    padding: 1rem;
-    cursor: pointer;
- 
-}
 
-.tab-wrap .tab-content {
-    background: #fff;
-    width: 100%;
-    border-radius:0 3px 3px 3px;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    padding: 20px;
-    display: none;
-}
-
-.tab-wrap [id^="tab"]:checked + label {
-    background: #198754;
-    color: white;
-}
-
-.tab-wrap [id^="tab"]:checked ~ .tab-content{
-    display: block;
-} 
-
-.btn1{
-    float:right;
-}
 .btn{
     padding: 10px 40px;
     font-size: 1.2rem;
     font-weight: 600;
+    z-index: 30;
 }
+@media (min-width:320px){
+ 
+    .almuBtn{
+    position: relative;
+    top: 0px;
+    left: 160px;
+    width: 250px;
+    }
+    .empBtn{
+        position: relative;
+        top: 91px;
+        left: -23px;
+        width: 250px;
+    }
+    .logBtn{
+        position: relative;
+        top: 177px;
+        left: -186px;
+    }
+}
+/* for large Mobile */
+@media (min-width:420px){
+    .almuBtn{
+        position: relative;
+        top: 0px;
+        left: 80px;
+        width: 250px;
+        }
+        .empBtn{
+            position: relative;
+            top: 2px;
+            left: 80px;
+            width: 250px;
+        }
+        .logBtn{
+            position: relative;
+            top: -18rem;
+            left: -50px;
+        }
+}
+/* for lablet */
+@media (min-width:768px){
+    .almuBtn{
+        position: relative;
+        top: 0px;
+        left: 80px;
+        width: 250px;
+        height: 80px;
+        }
+        .empBtn{
+            position: relative;
+            top: 0px;
+            left: 150px;
+            width: 250px;
+        }
+        .logBtn{
+            position: relative;
+            top: -18rem;
+            left: 30px;
+        }
+        
+}
+@media (min-width:1024px){
+    .almuBtn{
+        position: relative;
+        top: 0px;
+        left: 150px;
+        width: 250px;
+        height: 80px;
+        font-size: 20px;
+        }
+        .empBtn{
+            position: relative;
+            bottom: 16px;
+            left: 235px;
+            width: 250px;
+            font-size: 20px;
+        }
+        .logBtn{
+            position: relative;
+            bottom: 0rem;
+            left: 155px;
+        }
+}
+@media (min-width:1440px){
+    .almuBtn{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 250px;
+        height: 82px;
+        font-size: 22px;
+        }
+        .empBtn{
+            position: relative;
+            bottom: 16px;
+            left: 100px;
+            width: 250px;
+            font-size: 22px;
+        }
+        .logBtn{
+            position: relative;
+            bottom:  0rem;
+            left: 340px;
+        }
+}
+

@@ -125,7 +125,17 @@
       <button
         class="btn btn-success mb-3 btnCon"
         (click)="Continue()"
-       
+        [disabled]="
+          !SurveyForm.value.StudentName ||
+          !SurveyForm.value.Department ||
+          !SurveyForm.value.Contact_no ||
+          !SurveyForm.value.Registration_no ||
+          !SurveyForm.value.Email ||
+          !SurveyForm.value.CNIC_no ||
+          !SurveyForm.value.Employment_Status ||
+          !SurveyForm.value.Organization_Name ||
+          !SurveyForm.value.Organization_Position
+        "
       >
         Proceed to Survey
       </button>

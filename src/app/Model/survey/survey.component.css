@@ -79,6 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
 }
 /* .answer .ans_input{
     margin: 0 0 0 20px;
@@ -90,7 +91,7 @@
 .btn1{
     float:right;
 }
-@media (min-width:320px){
+@media (min-width:310px){
     .nfcsurvey{
         width: 100px;
         height: auto;
@@ -121,12 +122,12 @@
         width:40%;
     }
     .answer{
-        width: 30%;
+        width: 60%;
     }
     .lable{
-        width: 70%;
+        width: 50%;
     }
-    .cantainer_header ul li {
+    /* .cantainer_header ul li {
         margin-left: 44px;
-      }
+      } */
 }
