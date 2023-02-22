@@ -55,6 +55,16 @@
     margin-top: 1rem;
     text-transform: uppercase;
 }
+.adminBtn{
+    position: relative;
+    bottom: 7rem;
+    left: 32rem;
+    border-radius: 40px;
+    font-size: 20px !important;
+    width: 140px !important;
+    height: 55px !important;
+   
+}
 @media (min-width:320px){
     .nfcsurvey{
         width: 70px;
@@ -76,8 +86,18 @@
     .information p{
         font-size: 1rem;
     }
+    .adminBtn{
+        position: relative;
+        bottom: 7rem;
+        left: 6rem;
+        border-radius: 40px;
+        font-size: 14px !important;
+        width: 81px !important;
+        height: 33px !important;
+       
+    }
 }
-@media (min-width:430px){
+@media (min-width:425px){
     .nfcsurvey{
         width: 100px;
         height: 100px;
@@ -89,8 +109,18 @@
     .information p{
         font-size: 1.4rem;
     }
+    .adminBtn{
+        position: relative;
+        bottom: 3rem;
+        left: 8rem;
+        border-radius: 40px;
+        font-size: 14px !important;
+        width: 98px !important;
+        height: 40px !important;
+       
+    }
 }
-@media (min-width:780px){
+@media (min-width:768px){
     .nfcsurvey{
         width: 120px;
         height: 120px;
@@ -108,5 +138,39 @@
     }
     .information p{
         font-size: 1.6rem;
+    }
+    .adminBtn{
+        position: relative;
+        bottom: 8rem;
+        left: 18rem;
+        border-radius: 40px;
+        font-size: 20px !important;
+        width: 140px !important;
+        height: 55px !important;
+       
+    }
+}
+@media (min-width:1024px){
+    .adminBtn{
+        position: relative;
+        bottom: 9rem;
+        left: 26rem;
+        border-radius: 40px;
+        font-size: 15px !important;
+        width: 100px !important;
+        height: 38px !important;
+       
+    }
+}
+@media (min-width:1440px){
+    .adminBtn{
+        position: relative;
+        bottom: 10rem;
+        left: 40rem;
+        border-radius: 40px;
+        font-size: 20px !important;
+        width: 140px !important;
+        height: 55px !important;
+       
     }
 }

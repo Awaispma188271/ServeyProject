@@ -18,6 +18,9 @@ export class MainPageComponent implements OnInit {
   employeeServey(){
     this.router.navigate(['/Employee-Survey']);
   }
+  admin(){
+    this.router.navigate(['/Admin']);
+  }
   isLogin(){
     this.router.navigate(['/AdminLogin']);
   }

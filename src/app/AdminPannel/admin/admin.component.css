@@ -82,7 +82,7 @@
         }
         .logBtn{
             position: relative;
-            top: -18rem;
+            top: -17rem;
             left: -50px;
         }
 }
@@ -103,7 +103,7 @@
         }
         .logBtn{
             position: relative;
-            top: -18rem;
+            top: -17rem;
             left: 30px;
         }
         
@@ -126,7 +126,7 @@
         }
         .logBtn{
             position: relative;
-            bottom: 0rem;
+            top: -17rem;
             left: 155px;
         }
 }
@@ -148,7 +148,7 @@
         }
         .logBtn{
             position: relative;
-            bottom:  0rem;
+            top:  -17rem;
             left: 340px;
         }
 }
