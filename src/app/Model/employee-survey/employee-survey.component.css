@@ -1,9 +1,12 @@
 .main{   
-  width: 630px;
+  width: 100%;
   height: auto;
   border-radius: 25px;
   margin:170px auto 120px auto;
   /* background-color: black; */
+}
+.info{
+  width: 600px !important;
 }
 .surveysvg{
   position: absolute;
@@ -96,6 +99,9 @@
       width: 100px;
       height: auto;
   }
+  .info{
+    width: 80% !important;
+}
   .head{
       flex-direction: column;
       align-items: flex-end;
@@ -127,6 +133,9 @@
   .lable{
       width: 50%;
   }
+  .info{
+    width: 60% !important;
+}
   /* .cantainer_header ul li {
       margin-left: 44px;
     } */
