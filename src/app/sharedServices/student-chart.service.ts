@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class StudentChartService {
 
-  private baseURL: string = 'https://localhost:7042/api/StudentChart/';
+  private baseURL: string = 'https://localhost:44314/api/StudentChart/';
   constructor(private _http:HttpClient) { }
 
   

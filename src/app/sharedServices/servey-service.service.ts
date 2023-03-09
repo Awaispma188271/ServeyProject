@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ServeyServiceService {
-  private baseURL: string = 'https://localhost:7042/api/Survey/';
+  private baseURL: string = 'https://localhost:44314/api/Survey/';
   currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
   jwtHelperService = new JwtHelperService();
   constructor(private http: HttpClient, private route: Router) {}
