@@ -3,6 +3,7 @@
     <div style="margin: 20px 30px;">
       <button class="btn btn-success mx-2 my-2" (click)="exportexcel()">Download Excel</button>
       <button class="btn btn-success mx-2" (click)="studentChart()">Generate Chart</button>
+      <button class="btn btn-success my-2 " (click)="showComments()">Comments</button>
     </div>
     
     <table class="table table-dark table-bordered" id="excel-table">
@@ -37,7 +38,7 @@
           <th scope="col">Q16</th>
           <th scope="col">Q17</th>
           <th scope="col">Q18</th>
-          <th scope="col">Q19</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -71,7 +72,7 @@
           <td>{{ student.Question_16 }}</td>
           <td>{{ student.Question_17 }}</td>
           <td>{{ student.Question_18 }}</td>
-          <td>{{ student.Question_19 }}</td>
+          <td><button class="btn btn-danger" (click)="deleteRow(student.Id)">Delete</button></td>
          
         </tr>
       </tbody>

@@ -7,9 +7,7 @@
       <h3 class="mt-3">Evaluator Information</h3>
 
       <div class="mb-3">
-        <label for="EvaluatorName" class="form-label"
-          >Evaluator Name</label
-        >
+        <label for="EvaluatorName" class="form-label">Evaluator Name</label>
         <input
           type="text"
           class="form-control"
@@ -17,6 +15,18 @@
           aria-describedby="emailHelp"
           formControlName="EvaluatorName"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="name.errors?.['required'] && name.touched"
+        >
+          Evaluator name is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="name.errors?.['pattern'] && name.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
         <label for="Designation_Evaluator" class="form-label"
@@ -29,6 +39,18 @@
           aria-describedby="emailHelp"
           formControlName="Designation_Evaluator"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="designation_Evaluator.errors?.['required'] && designation_Evaluator.touched"
+        >
+          Designation is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="designation_Evaluator.errors?.['pattern'] && designation_Evaluator.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
         <label for="Organization_Name" class="form-label"
@@ -41,6 +63,19 @@
           aria-describedby="emailHelp"
           formControlName="Organization_Name"
         />
+
+        <div
+          class="form-text text-danger"
+          *ngIf="Organization_Name.errors?.['required'] && Organization_Name.touched"
+        >
+          Organization name is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="Organization_Name.errors?.['pattern'] && Organization_Name.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
         <label for="Contact_no" class="form-label">Official Contact No.</label>
@@ -51,6 +86,18 @@
           aria-describedby="emailHelp"
           formControlName="Contact_no"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="mobileNo.errors?.['required'] && mobileNo.touched"
+        >
+          Contact No. is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="mobileNo.errors?.['pattern']  && mobileNo.touched"
+        >
+          Contact No. must contains 11 number
+        </div>
       </div>
       <div class="mb-3">
         <label for="UserName" class="form-label">Official Email Address</label>
@@ -62,7 +109,7 @@
           formControlName="Email"
         />
       </div>
-        <!--Graduate Information -->
+      <!--Graduate Information -->
       <h3 class="mt-3">Graduate Information</h3>
       <div class="mb-3">
         <label for="EmployerName" class="form-label">Employer Name</label>
@@ -73,6 +120,18 @@
           aria-describedby="emailHelp"
           formControlName="EmployerName"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="EmployerName.errors?.['required'] && EmployerName.touched"
+        >
+          Employer name is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="EmployerName.errors?.['pattern'] && EmployerName.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
         <label for="Designation_Employer" class="form-label">Designation</label>
@@ -83,9 +142,23 @@
           aria-describedby="emailHelp"
           formControlName="Designation_Employer"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="Designation_Employer.errors?.['required'] && Designation_Employer.touched"
+        >
+          Designation name is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="Designation_Employer.errors?.['pattern'] && Designation_Employer.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
-        <label for="Registration_no" class="form-label">UET Registration No.</label>
+        <label for="Registration_no" class="form-label"
+          >UET Registration No.</label
+        >
         <input
           type="text"
           class="form-control"
@@ -93,6 +166,12 @@
           aria-describedby="emailHelp"
           formControlName="Registration_no"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="regis.errors?.['required'] && regis.touched"
+        >
+          Student Registration No. is required
+        </div>
       </div>
       <div class="mb-3">
         <label for="Job_Level" class="form-label">Job Level</label>
@@ -103,7 +182,7 @@
         >
           <option value="Entry Level">Entry Level</option>
           <option value="Mid carrer">Mid carrer</option>
-          <option value="Senior Managment">Senior Managment</option>          
+          <option value="Senior Managment">Senior Managment</option>
         </select>
       </div>
       <div class="mb-3">
@@ -126,10 +205,15 @@
         class="btn btn-success mb-3 btnCon"
         (click)="Continue()"
         [disabled]="
-        !EmployeeSurveyForm.value.Organization_Name ||
+          !EmployeeSurveyForm.value.EvaluatorName ||
           !EmployeeSurveyForm.value.Department ||
-          !EmployeeSurveyForm.value.Contact_no ||          
-          !EmployeeSurveyForm.value.Email
+          !EmployeeSurveyForm.value.Contact_no ||
+          !EmployeeSurveyForm.value.Registration_no ||
+          !EmployeeSurveyForm.value.Email ||
+          !EmployeeSurveyForm.value.Designation_Evaluator ||
+          !EmployeeSurveyForm.value.Designation_Employer ||
+          !EmployeeSurveyForm.value.Organization_Name ||
+          !EmployeeSurveyForm.value.EmployerName
         "
       >
         Proceed to survey
@@ -138,7 +222,16 @@
   </div>
   <div class="surveyForm" *ngIf="isContinue">
     <div class="container">
-      <h1 class="text-center">Employee Survey</h1>
+      <h1 class="text-center">Employer Survey</h1>
+      <p class="mb-3">
+        <b>
+          The purpose of this survey is to obtain employer input on the quality
+          of education that NFC-IEFR is providing to its students to assess the
+          quality of the academic program. The survey is with regard to NFC-IEFR
+          graduates employed at your organization. We seek your help in
+          completing this survey..</b
+        >
+      </p>
     </div>
     <div class="question_cantaier mb-3">
       <div class="head">
@@ -408,9 +501,7 @@
 
         <div class="question">
           <div class="label">
-            <label for=""
-              ><h6>6. Ability to design a system component or process</h6>
-            </label>
+            <label for=""><h6>6. Computer knowledge.</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -683,9 +774,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""
-              ><h6>11. Ability to work in arduous /Challenging situation</h6>
-            </label>
+            <label for=""><h6>11. Leadership.</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -779,7 +868,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>13. Appreciation of ethical Values</h6> </label>
+            <label for=""><h6>13. Motivation</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -824,12 +913,106 @@
             />
           </div>
         </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>14. Reliability</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
+              name="Question_14"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_14"
+            />
+            <input
+              type="radio"
+              name="Question_14"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_14"
+            />
+            <input
+              type="radio"
+              name="Question_14"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_14"
+            />
+            <input
+              type="radio"
+              name="Question_14"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_14"
+            />
+            <input
+              type="radio"
+              name="Question_14"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_14"
+            />
+          </div>
+        </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>15. Appreciation of ethical values</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
+              name="Question_15"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_15"
+            />
+            <input
+              type="radio"
+              name="Question_15"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_15"
+            />
+            <input
+              type="radio"
+              name="Question_15"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_15"
+            />
+            <input
+              type="radio"
+              name="Question_15"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_15"
+            />
+            <input
+              type="radio"
+              name="Question_15"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_15"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div class="question_cantaier mb-3">
       <div class="head">
         <div class="cantainer_heading">
-          <h1>Management /Leadership Skills</h1>
+          <h1>Work Skills</h1>
         </div>
         <div class="cantainer_header">
           <ul>
@@ -845,335 +1028,183 @@
       <div class="questions">
         <div class="question">
           <div class="label">
-            <label for=""
-              ><h6>14. Resource and Time management skills</h6>
-            </label>
+            <label for=""><h6>16. Time management skills.</h6> </label>
           </div>
           <div class="answer">
             <input
               type="radio"
-              name="Question_14"
+              name="Question_16"
               id="Excellent"
               value="Excellent"
               class="ans_input"
-              formControlName="Question_14"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_14"
+              name="Question_16"
               id="Very Good"
               value="Very Good"
               class="ans_input"
-              formControlName="Question_14"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_14"
+              name="Question_16"
               id="Good"
               value="Good"
               class="ans_input"
-              formControlName="Question_14"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_14"
+              name="Question_16"
               id="Fair"
               value="Fair"
               class="ans_input"
-              formControlName="Question_14"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_14"
+              name="Question_16"
               id="Poor"
               value="Poor"
               class="ans_input"
-              formControlName="Question_14"
+              formControlName="Question_16"
             />
           </div>
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>15. Judgment</h6> </label>
+            <label for=""><h6>17. Judgment</h6> </label>
           </div>
           <div class="answer">
             <input
               type="radio"
-              name="Question_15"
+              name="Question_17"
               id="Excellent"
               value="Excellent"
               class="ans_input"
-              formControlName="Question_15"
+              formControlName="Question_17"
             />
             <input
               type="radio"
-              name="Question_15"
+              name="Question_17"
               id="Very Good"
               value="Very Good"
               class="ans_input"
-              formControlName="Question_15"
+              formControlName="Question_17"
             />
             <input
               type="radio"
-              name="Question_15"
+              name="Question_17"
               id="Good"
               value="Good"
               class="ans_input"
-              formControlName="Question_15"
+              formControlName="Question_17"
             />
             <input
               type="radio"
-              name="Question_15"
+              name="Question_17"
               id="Fair"
               value="Fair"
               class="ans_input"
-              formControlName="Question_15"
+              formControlName="Question_17"
             />
             <input
               type="radio"
-              name="Question_15"
+              name="Question_17"
               id="Poor"
               value="Poor"
               class="ans_input"
-              formControlName="Question_15"
+              formControlName="Question_17"
             />
           </div>
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>16. Discipline</h6> </label>
+            <label for=""><h6>18. Discipline</h6> </label>
           </div>
           <div class="answer">
             <input
               type="radio"
-              name="Question_16"
+              name="Question_18"
               id="Excellent"
               value="Excellent"
               class="ans_input"
-              formControlName="Question_16"
+              formControlName="Question_18"
             />
             <input
               type="radio"
-              name="Question_16"
+              name="Question_18"
               id="Very Good"
               value="Very Good"
               class="ans_input"
-              formControlName="Question_16"
+              formControlName="Question_18"
             />
             <input
               type="radio"
-              name="Question_16"
+              name="Question_18"
               id="Good"
               value="Good"
               class="ans_input"
-              formControlName="Question_16"
+              formControlName="Question_18"
             />
             <input
               type="radio"
-              name="Question_16"
+              name="Question_18"
               id="Fair"
               value="Fair"
               class="ans_input"
-              formControlName="Question_16"
+              formControlName="Question_18"
             />
             <input
               type="radio"
-              name="Question_16"
+              name="Question_18"
               id="Poor"
               value="Poor"
               class="ans_input"
-              formControlName="Question_16"
+              formControlName="Question_18"
             />
           </div>
         </div>
       </div>
     </div>
-    <div class="question_cantaier mb-3">
-      <div class="head">
-        <div class="cantainer_heading">
-          <h1>Career Opportunities</h1>
-        </div>
-        <div class="cantainer_header">
-          <ul>
-            <li>Excellent</li>
-            <li>Very Good</li>
-            <li>Good</li>
-            <li>Fair</li>
-            <li>Poor</li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="questions">
-        <div class="question">
-          <div class="label">
-            <label for=""
-              ><h6>17. Scope for IEFR Students in Professional Fields</h6>
-            </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_17"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_17"
-            />
-            <input
-              type="radio"
-              name="Question_17"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_17"
-            />
-            <input
-              type="radio"
-              name="Question_17"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_17"
-            />
-            <input
-              type="radio"
-              name="Question_17"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_17"
-            />
-            <input
-              type="radio"
-              name="Question_17"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_17"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="question_cantaier mb-3">
-      <div class="head">
-        <div class="cantainer_heading">
-          <h1>Department Status</h1>
-        </div>
-        <div class="cantainer_header">
-          <ul>
-            <li>Excellent</li>
-            <li>Very Good</li>
-            <li>Good</li>
-            <li>Fair</li>
-            <li>Poor</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="questions">
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>18. Faculty</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_18"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_18"
-            />
-            <input
-              type="radio"
-              name="Question_18"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_18"
-            />
-            <input
-              type="radio"
-              name="Question_18"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_18"
-            />
-            <input
-              type="radio"
-              name="Question_18"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_18"
-            />
-            <input
-              type="radio"
-              name="Question_18"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_18"
-            />
-          </div>
-        </div>
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>19. Infrastructure</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_19"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_19"
-            />
-            <input
-              type="radio"
-              name="Question_19"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_19"
-            />
-            <input
-              type="radio"
-              name="Question_19"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_19"
-            />
-            <input
-              type="radio"
-              name="Question_19"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_19"
-            />
-            <input
-              type="radio"
-              name="Question_19"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_19"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <label for=""> <b>Comments/Suggestion:</b> </label><br />
+    <textarea
+      name="Comments"
+      id=""
+      style="width: 100%"
+      rows="5"
+      formControlName="Comments"
+      placeholder="(Optional)"
+    ></textarea>
 
     <button
       class="btn btn-success mb-3"
       (click)="onSubmit()"
-      [disabled]="!EmployeeSurveyForm.valid"
+      [disabled]="
+        !EmployeeSurveyForm.controls[
+          'Question_1' &&
+            'Question_2' &&
+            'Question_3' &&
+            'Question_4 ' &&
+            'Question_5' &&
+            'Question_6' &&
+            'Question_7' &&
+            'Question_8' &&
+            'Question_9' &&
+            'Question_10' &&
+            'Question_11' &&
+            'Question_12' &&
+            'Question_13' &&
+            'Question_14' &&
+            'Question_15' &&
+            'Question_16' &&
+            'Question_17' &&
+            'Question_18'
+        ].valid
+      "
     >
       Submit
     </button>

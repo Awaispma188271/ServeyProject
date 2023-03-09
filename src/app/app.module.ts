@@ -16,6 +16,9 @@ import { StudentResponseComponent } from './AdminPannel/student-response/student
 import { StudentChartComponent } from './AdminPannel/student-chart/student-chart.component';
 import { EmployeeResponseComponent } from './AdminPannel/employee-response/employee-response.component';
 import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-chart.component';
+import { SubmittedComponent } from './Model/submitted/submitted.component';
+import { StudentCommentsComponent } from './AdminPannel/student-comments/student-comments.component';
+import { EmployerCommentsComponent } from './AdminPannel/employer-comments/employer-comments.component';
 //import { NgxChartModule } from 'ngx-chart';
 
 
@@ -32,6 +35,9 @@ import { EmployeeChartComponent } from './AdminPannel/employee-chart/employee-ch
     StudentChartComponent,
     EmployeeResponseComponent,
     EmployeeChartComponent,
+    SubmittedComponent,
+    StudentCommentsComponent,
+    EmployerCommentsComponent,
     
   ],
   imports: [

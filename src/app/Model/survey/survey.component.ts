@@ -18,8 +18,8 @@ export class SurveyComponent implements OnInit {
   surveyData: any[] = [];
   Email: string = '';
   value: any;
-  isContinue:boolean=false;
-  isSurvey:boolean=true;
+  isContinue: boolean = false;
+  isSurvey: boolean = true;
 
   constructor(
     private serveyService: ServeyServiceService,
@@ -50,20 +50,35 @@ export class SurveyComponent implements OnInit {
       Question_18: ['', Validators.required],
       Question_19: ['', Validators.required],
       Question_20: ['', Validators.required],
-      Question_21: ['', Validators.required],
-      StudentName: ['', Validators.compose([])],
-      Registration_no: ['', Validators.compose([])],
-      CNIC_no: ['', Validators.compose([])],      
-      Contact_no: ['', Validators.compose([])],
-      Email: ['', Validators.compose([Validators.required, Validators.email])],     
+      StudentName: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Registration_no: ['', Validators.compose([Validators.required])],
+      CNIC_no: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$'),
+        ]),
+      ],
+      Contact_no: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{11}$'),
+        ]),
+      ],
+      Email: ['', Validators.compose([Validators.required, Validators.email])],
       Employment_Status: ['', Validators.compose([])],
       Organization_Name: ['', Validators.compose([])],
       Organization_Position: ['', Validators.compose([])],
       Department: ['', Validators.compose([])],
-     
+      Comments: ['', Validators.compose([])],
     });
-
-    
   }
   onSubmit() {
     var servey: User = this.SurveyForm.value;
@@ -74,17 +89,29 @@ export class SurveyComponent implements OnInit {
     this.SurveyForm.reset();
     console.log(this.surveyData);
     alert('Survey Submit Successfully');
+    this.route.navigate(['/Survey-Submitted']);
   }
 
   isLogin() {
     this.route.navigate(['/AdminLogin']);
   }
-  Continue(){
-    this.isContinue=true;
-    this.isSurvey=false;
+  Continue() {
+    this.isContinue = true;
+    this.isSurvey = false;
   }
-
+  get name(): FormGroup {
+    return this.SurveyForm.get('StudentName') as FormGroup;
+  }
+  get regis(): FormGroup {
+    return this.SurveyForm.get('Registration_no') as FormGroup;
+  }
+  get cnicNo(): FormGroup {
+    return this.SurveyForm.get('CNIC_no') as FormGroup;
+  }
   get email(): FormGroup {
     return this.SurveyForm.get('Email') as FormGroup;
+  }
+  get mobileNo(): FormGroup {
+    return this.SurveyForm.get('Contact_no') as FormGroup;
   }
 }

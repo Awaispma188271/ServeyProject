@@ -740,43 +740,14 @@ export class StudentChartComponent implements OnInit {
       });
     });
 
-    //Question 21
-
-    this._weather.question21(this.id).subscribe((res) => {
-      var resp = res;
-
-      var point: any = Object.values(resp);
-
-      console.log('Q 21', point);
-
-      this.chart21 = new Chart('canvas21', {
-        type: 'pie',
-        data: {
-          labels: ['Excelent', 'Good', 'Very_Good', 'Fair'],
-
-          datasets: [
-            {
-              data: point,
-              // borderColor: '#3e95cd',
-
-              label: 'Question 21 Count',
-              backgroundColor: [
-                'rgb(22, 160, 133)',
-                'rgb(255, 99, 132)',
-                'rgb(255, 205, 86)',
-                'rgb(142, 68, 173)',
-                'rgb(142, 68, 233)',
-              ],
-
-              borderWidth: 3,
-            },
-          ],
-        },
-      });
-    });
+    
   }
 
   onBack() {
     this.route.navigate(['/Admin']);
+  }
+  takePrint(){
+   
+    window.print();
   }
 }

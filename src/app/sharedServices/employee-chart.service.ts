@@ -8,7 +8,7 @@ import { StudentResponse } from './student-chart.service';
 })
 export class EmployeeChartService {
 
-  private baseURL: string = 'https://localhost:44314/api/EmployeeChart/';
+  private baseURL: string = 'https://localhost:7042/api/EmployeeChart/';
   constructor(private _http:HttpClient) { }
 
   public question1(Id:any)  {

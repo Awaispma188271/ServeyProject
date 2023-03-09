@@ -2,7 +2,8 @@
     <h2 style="margin: 20px 30px;">Student Responses</h2>
     <div style="margin: 20px 30px;">
       <button class="btn btn-success mx-2 my-2" (click)="exportexcel()">Download Excel</button>
-    <button class="btn btn-success my-2" (click)="studentChart()">Generate Chart</button>
+    <button class="btn btn-success my-2 mx-2" (click)="studentChart()">Generate Chart</button>
+    <button class="btn btn-success my-2 " (click)="showComments()">Comments</button>
 
     </div>
     
@@ -39,7 +40,7 @@
           <th scope="col">Q18</th>
           <th scope="col">Q19</th>
           <th scope="col">Q20</th>
-          <th scope="col">Q21</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -74,7 +75,7 @@
           <td>{{ student.Question_18 }}</td>
           <td>{{ student.Question_19 }}</td>
           <td>{{ student.Question_20 }}</td>
-          <td>{{ student.Question_21 }}</td>
+          <td><button class="btn btn-danger" (click)="deleteRow(student.Id)">Delete</button></td>
         </tr>
       </tbody>
     </table>

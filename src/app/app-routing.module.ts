@@ -1,3 +1,6 @@
+import { EmployerCommentsComponent } from './AdminPannel/employer-comments/employer-comments.component';
+import { StudentCommentsComponent } from './AdminPannel/student-comments/student-comments.component';
+import { SubmittedComponent } from './Model/submitted/submitted.component';
 import { StudentChartComponent } from './AdminPannel/student-chart/student-chart.component';
 
 import { NgModule } from '@angular/core';
@@ -19,8 +22,20 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
+    path: 'Survey-Submitted',
+    component: SubmittedComponent,
+  },
+  {
     path: 'Student-Survey',
     component: SurveyComponent,
+  },
+  {
+    path: 'Student-Comments',
+    component: StudentCommentsComponent,
+  },
+  {
+    path:'Employer-Comments',
+    component:EmployerCommentsComponent
   },
   {
     path: 'Employee-Survey',

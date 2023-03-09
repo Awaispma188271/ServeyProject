@@ -1,5 +1,5 @@
 import { EmployeeChartService } from './../../sharedServices/employee-chart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Router } from '@angular/router';
 import { ServeyServiceService } from 'src/app/sharedServices/servey-service.service';
@@ -11,6 +11,7 @@ import { ServeyServiceService } from 'src/app/sharedServices/servey-service.serv
   providers: [EmployeeChartService, ServeyServiceService],
 })
 export class EmployeeChartComponent implements OnInit {
+ 
   coinName: any;
   chart: any = [];
   chart2: any = [];
@@ -698,5 +699,9 @@ export class EmployeeChartComponent implements OnInit {
   }
   onBack() {
     this.route.navigate(['/Admin']);
+  }
+  takePrint(){
+   
+    window.print();
   }
 }

@@ -40,8 +40,22 @@ export class StudentResponseComponent implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
+  deleteRow(id:number){
+    this.serveyService.deleteEntityStudent(id).subscribe(res =>{
+      this.id = this.serveyService.getDecodedToken();
+      this.serveyService.getStudentRes(this.id).subscribe((res) => {
+        console.log('res', res);
+  
+        this.Students = res;
+      });
+      alert("Deleted Successfully");
+    })
+  }
 
   studentChart() {
     this.route.navigate(['/student-chart']);
+  }
+  showComments(){
+    this.route.navigate(['/Student-Comments']);
   }
 }

@@ -12,6 +12,18 @@
           aria-describedby="emailHelp"
           formControlName="StudentName"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="name.errors?.['required'] && name.touched"
+        >
+          Student name is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="name.errors?.['pattern'] && name.touched"
+        >
+          Only Text allowed
+        </div>
       </div>
       <div class="mb-3">
         <label for="Registration_no" class="form-label"
@@ -24,9 +36,15 @@
           aria-describedby="emailHelp"
           formControlName="Registration_no"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="regis.errors?.['required'] && regis.touched"
+        >
+          Student Registration No. is required
+        </div>
       </div>
       <div class="mb-3">
-        <label for="CNIC_no" class="form-label">CNIC no</label>
+        <label for="CNIC_no" class="form-label">CNIC No.</label>
         <input
           type="text"
           class="form-control"
@@ -34,6 +52,18 @@
           aria-describedby="emailHelp"
           formControlName="CNIC_no"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="cnicNo.errors?.['required'] && cnicNo.touched"
+        >
+          CNIC No. is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="cnicNo.errors?.['pattern'] && cnicNo.touched"
+        >
+          CNIC must contains 13 number
+        </div>
       </div>
       <div class="mb-3">
         <label for="UserName" class="form-label">Email Address</label>
@@ -73,7 +103,7 @@
         </select>
       </div>
       <div class="mb-3">
-        <label for="Contact_no" class="form-label">Contact no.</label>
+        <label for="Contact_no" class="form-label">Contact No.</label>
         <input
           type="text"
           class="form-control"
@@ -81,6 +111,18 @@
           aria-describedby="emailHelp"
           formControlName="Contact_no"
         />
+        <div
+          class="form-text text-danger"
+          *ngIf="mobileNo.errors?.['required'] && mobileNo.touched"
+        >
+          Contact No. is required
+        </div>
+        <div
+          class="form-text text-danger"
+          *ngIf="mobileNo.errors?.['pattern']  && mobileNo.touched"
+        >
+          Contact No. must contains 11 number
+        </div>
       </div>
       <div class="mb-3">
         <label for="Employment_Status" class="form-label"
@@ -143,7 +185,15 @@
 
   <div class="surveyForm" *ngIf="isContinue">
     <div class="container">
-      <h1 class="text-center">Alumni Survey</h1>
+      <h1 class="text-center mb-3">Alumni Survey</h1>
+      <p class="mb-3">
+        <b>
+          The purpose of this survey is to obtain alumni input on the quality of
+          education they received and the level of preparation they had at
+          University. The purpose of this survey is to assess the quality of the
+          academic program. We seek your help in completing this survey.</b
+        >
+      </p>
     </div>
     <div class="question_cantaier mb-3">
       <div class="head">
@@ -410,56 +460,6 @@
             />
           </div>
         </div>
-
-        <div class="question">
-          <div class="label">
-            <label for=""
-              ><h6>6. Ability to design a system component or process</h6>
-            </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_6"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_6"
-            />
-            <input
-              type="radio"
-              name="Question_6"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_6"
-            />
-            <input
-              type="radio"
-              name="Question_6"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_6"
-            />
-            <input
-              type="radio"
-              name="Question_6"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_6"
-            />
-            <input
-              type="radio"
-              name="Question_6"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_6"
-            />
-          </div>
-        </div>
       </div>
     </div>
     <div class="question_cantaier mb-3">
@@ -481,7 +481,54 @@
       <div class="questions">
         <div class="question">
           <div class="label">
-            <label for=""><h6>7. Oral communication</h6> </label>
+            <label for=""><h6>6. Oral communication</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
+              name="Question_6"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_6"
+            />
+            <input
+              type="radio"
+              name="Question_6"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_6"
+            />
+            <input
+              type="radio"
+              name="Question_6"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_6"
+            />
+            <input
+              type="radio"
+              name="Question_6"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_6"
+            />
+            <input
+              type="radio"
+              name="Question_6"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_6"
+            />
+          </div>
+        </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>7. Report writing</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -528,7 +575,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>8. Report writing</h6> </label>
+            <label for=""><h6>8. Presentation skills</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -570,53 +617,6 @@
               value="Poor"
               class="ans_input"
               formControlName="Question_8"
-            />
-          </div>
-        </div>
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>9. Presentation skills</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_9"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_9"
-            />
-            <input
-              type="radio"
-              name="Question_9"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_9"
-            />
-            <input
-              type="radio"
-              name="Question_9"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_9"
-            />
-            <input
-              type="radio"
-              name="Question_9"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_9"
-            />
-            <input
-              type="radio"
-              name="Question_9"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_9"
             />
           </div>
         </div>
@@ -641,60 +641,107 @@
       <div class="questions">
         <div class="question">
           <div class="label">
-            <label for=""><h6>10. Ability to work in team</h6> </label>
+            <label for=""><h6>9. Ability to work in team</h6> </label>
           </div>
           <div class="answer">
             <input
               type="radio"
-              name="Question_10"
+              name="Question_9"
               id="Excellent"
               value="Excellent"
               class="ans_input"
-              formControlName="Question_10"
+              formControlName="Question_9"
             />
             <input
               type="radio"
-              name="Question_10"
+              name="Question_9"
               id="Very Good"
               value="Very Good"
               class="ans_input"
-              formControlName="Question_10"
+              formControlName="Question_9"
             />
             <input
               type="radio"
-              name="Question_10"
+              name="Question_9"
               id="Good"
               value="Good"
               class="ans_input"
-              formControlName="Question_10"
+              formControlName="Question_9"
             />
             <input
               type="radio"
-              name="Question_10"
+              name="Question_9"
               id="Fair"
               value="Fair"
               class="ans_input"
-              formControlName="Question_10"
+              formControlName="Question_9"
             />
             <input
               type="radio"
-              name="Question_10"
+              name="Question_9"
               id="Poor"
               value="Poor"
               class="ans_input"
-              formControlName="Question_10"
+              formControlName="Question_9"
             />
           </div>
         </div>
         <div class="question">
           <div class="label">
             <label for=""
-              ><h6>11. Ability to work in arduous /Challenging situation</h6>
+              ><h6>10. Ability to work in arduous /Challenging situation</h6>
             </label>
           </div>
           <div class="answer">
             <input
               type="radio"
+              name="Question_10"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_10"
+            />
+            <input
+              type="radio"
+              name="Question_10"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_10"
+            />
+            <input
+              type="radio"
+              name="Question_10"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_10"
+            />
+            <input
+              type="radio"
+              name="Question_10"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_10"
+            />
+            <input
+              type="radio"
+              name="Question_10"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_10"
+            />
+          </div>
+        </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>11. Independent thinking</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
               name="Question_11"
               id="Excellent"
               value="Excellent"
@@ -737,7 +784,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>12. Independent thinking</h6> </label>
+            <label for=""><h6>12. Appreciation of ethical Values</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -779,53 +826,6 @@
               value="Poor"
               class="ans_input"
               formControlName="Question_12"
-            />
-          </div>
-        </div>
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>13. Appreciation of ethical Values</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_13"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_13"
-            />
-            <input
-              type="radio"
-              name="Question_13"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_13"
-            />
-            <input
-              type="radio"
-              name="Question_13"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_13"
-            />
-            <input
-              type="radio"
-              name="Question_13"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_13"
-            />
-            <input
-              type="radio"
-              name="Question_13"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_13"
             />
           </div>
         </div>
@@ -851,12 +851,59 @@
         <div class="question">
           <div class="label">
             <label for=""
-              ><h6>14. Resource and Time management skills</h6>
+              ><h6>13. Resource and Time management skills</h6>
             </label>
           </div>
           <div class="answer">
             <input
               type="radio"
+              name="Question_13"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_13"
+            />
+            <input
+              type="radio"
+              name="Question_13"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_13"
+            />
+            <input
+              type="radio"
+              name="Question_13"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_13"
+            />
+            <input
+              type="radio"
+              name="Question_13"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_13"
+            />
+            <input
+              type="radio"
+              name="Question_13"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_13"
+            />
+          </div>
+        </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>14. Judgment</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
               name="Question_14"
               id="Excellent"
               value="Excellent"
@@ -899,7 +946,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>15. Judgment</h6> </label>
+            <label for=""><h6>15. Discipline</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -941,53 +988,6 @@
               value="Poor"
               class="ans_input"
               formControlName="Question_15"
-            />
-          </div>
-        </div>
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>16. Discipline</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_16"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_16"
-            />
-            <input
-              type="radio"
-              name="Question_16"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_16"
-            />
-            <input
-              type="radio"
-              name="Question_16"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_16"
-            />
-            <input
-              type="radio"
-              name="Question_16"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_16"
-            />
-            <input
-              type="radio"
-              name="Question_16"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_16"
             />
           </div>
         </div>
@@ -1013,49 +1013,49 @@
         <div class="question">
           <div class="label">
             <label for=""
-              ><h6>17. Scope for IEFR Students in Professional Fields</h6>
+              ><h6>16. Scope for IEFR Students in Professional Fields</h6>
             </label>
           </div>
           <div class="answer">
             <input
               type="radio"
-              name="Question_17"
+              name="Question_16"
               id="Excellent"
               value="Excellent"
               class="ans_input"
-              formControlName="Question_17"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_17"
+              name="Question_16"
               id="Very Good"
               value="Very Good"
               class="ans_input"
-              formControlName="Question_17"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_17"
+              name="Question_16"
               id="Good"
               value="Good"
               class="ans_input"
-              formControlName="Question_17"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_17"
+              name="Question_16"
               id="Fair"
               value="Fair"
               class="ans_input"
-              formControlName="Question_17"
+              formControlName="Question_16"
             />
             <input
               type="radio"
-              name="Question_17"
+              name="Question_16"
               id="Poor"
               value="Poor"
               class="ans_input"
-              formControlName="Question_17"
+              formControlName="Question_16"
             />
           </div>
         </div>
@@ -1080,7 +1080,54 @@
       <div class="questions">
         <div class="question">
           <div class="label">
-            <label for=""><h6>18. Faculty</h6> </label>
+            <label for=""><h6>17. Faculty</h6> </label>
+          </div>
+          <div class="answer">
+            <input
+              type="radio"
+              name="Question_17"
+              id="Excellent"
+              value="Excellent"
+              class="ans_input"
+              formControlName="Question_17"
+            />
+            <input
+              type="radio"
+              name="Question_17"
+              id="Very Good"
+              value="Very Good"
+              class="ans_input"
+              formControlName="Question_17"
+            />
+            <input
+              type="radio"
+              name="Question_17"
+              id="Good"
+              value="Good"
+              class="ans_input"
+              formControlName="Question_17"
+            />
+            <input
+              type="radio"
+              name="Question_17"
+              id="Fair"
+              value="Fair"
+              class="ans_input"
+              formControlName="Question_17"
+            />
+            <input
+              type="radio"
+              name="Question_17"
+              id="Poor"
+              value="Poor"
+              class="ans_input"
+              formControlName="Question_17"
+            />
+          </div>
+        </div>
+        <div class="question">
+          <div class="label">
+            <label for=""><h6>18. Infrastructure</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -1127,7 +1174,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>19. Infrastructure</h6> </label>
+            <label for=""><h6>19. Repute at National level</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -1174,7 +1221,7 @@
         </div>
         <div class="question">
           <div class="label">
-            <label for=""><h6>20. Repute at National level</h6> </label>
+            <label for=""><h6>20. Repute at International level</h6> </label>
           </div>
           <div class="answer">
             <input
@@ -1216,63 +1263,48 @@
               value="Poor"
               class="ans_input"
               formControlName="Question_20"
-            />
-          </div>
-        </div>
-        <div class="question">
-          <div class="label">
-            <label for=""><h6>21. Repute at International level</h6> </label>
-          </div>
-          <div class="answer">
-            <input
-              type="radio"
-              name="Question_21"
-              id="Excellent"
-              value="Excellent"
-              class="ans_input"
-              formControlName="Question_21"
-            />
-            <input
-              type="radio"
-              name="Question_21"
-              id="Very Good"
-              value="Very Good"
-              class="ans_input"
-              formControlName="Question_21"
-            />
-            <input
-              type="radio"
-              name="Question_21"
-              id="Good"
-              value="Good"
-              class="ans_input"
-              formControlName="Question_21"
-            />
-            <input
-              type="radio"
-              name="Question_21"
-              id="Fair"
-              value="Fair"
-              class="ans_input"
-              formControlName="Question_21"
-            />
-            <input
-              type="radio"
-              name="Question_21"
-              id="Poor"
-              value="Poor"
-              class="ans_input"
-              formControlName="Question_21"
             />
           </div>
         </div>
       </div>
     </div>
+    <label for=""> <b>Comments/Suggestion:</b> </label><br />
+    <textarea
+      name=""
+      id=""
+      style="width: 100%"
+      rows="5"
+      formControlName="Comments"
+      placeholder="(Optional)"
+    ></textarea>
 
     <button
       class="btn btn-success mb-3"
       (click)="onSubmit()"
-      [disabled]="!SurveyForm.valid"
+      [disabled]="
+        !SurveyForm.controls[
+          'Question_1' &&
+            'Question_2' &&
+            'Question_3' &&
+            'Question_4 ' &&
+            'Question_5' &&
+            'Question_6' &&
+            'Question_7' &&
+            'Question_8' &&
+            'Question_9' &&
+            'Question_10' &&
+            'Question_11' &&
+            'Question_12' &&
+            'Question_13' &&
+            'Question_14' &&
+            'Question_15' &&
+            'Question_16' &&
+            'Question_17' &&
+            'Question_18' &&
+            'Question_19' &&
+            'Question_20'
+        ].valid
+      "
     >
       Submit
     </button>

@@ -1,0 +1,22 @@
+<h3 class="text-center mt-3 mb-3">Comments/Suggestion</h3>
+<button class="btn btn-success mb-3 mx-3" (click)="exportexcel()">Download Excel</button>
+<table class="table table-dark table-bordered" id="excel-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Comments/Suggestion</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of StudentsComment">
+        <th scope="row">{{ student.Id }}</th>
+        <td>{{ student.StudentName }}</td>
+        <td>{{ student.Email }}</td>
+        <td>{{ student.Comments }}</td>
+        
+      </tr>
+    </tbody>
+  </table>

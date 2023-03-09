@@ -18,9 +18,8 @@ export class EmployeeSurveyComponent implements OnInit {
   surveyData: any[] = [];
   Email: string = '';
   value: any;
-  isContinue:boolean=false;
-  isSurvey:boolean=true;
-
+  isContinue: boolean = false;
+  isSurvey: boolean = true;
 
   constructor(
     private serveyService: ServeyServiceService,
@@ -49,21 +48,55 @@ export class EmployeeSurveyComponent implements OnInit {
       Question_16: ['', Validators.required],
       Question_17: ['', Validators.required],
       Question_18: ['', Validators.required],
-      Question_19: ['', Validators.required],
       //Evaluator Information
-      EvaluatorName: ['', Validators.compose([])],
-      Designation_Evaluator: ['', Validators.compose([])],
-      Organization_Name: ['', Validators.compose([])],      
-      Contact_no: ['', Validators.compose([])],
+      EvaluatorName: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Designation_Evaluator: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Organization_Name: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Contact_no: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{11}$'),
+        ]),
+      ],
       Email: ['', Validators.compose([Validators.required, Validators.email])],
       //Graduate Information
-      EmployerName: ['', Validators.compose([])],
-      Designation_Employer: ['', Validators.compose([])],
-      Registration_no: ['', Validators.compose([])],
+      EmployerName: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Designation_Employer: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[a-zA-Z].*'),
+        ]),
+      ],
+      Registration_no: ['', Validators.compose([Validators.required])],
       Job_Level: ['', Validators.compose([])],
       Department: ['', Validators.compose([])],
-      
-      
+      Comments: ['', Validators.compose([])],
     });
 
     this.userName = this.EmployeeSurveyForm.value;
@@ -78,17 +111,39 @@ export class EmployeeSurveyComponent implements OnInit {
     this.EmployeeSurveyForm.reset();
     console.log(this.surveyData);
     alert('Survey Submit Successfully');
+    this.route.navigate(['/Survey-Submitted']);
   }
 
   isLogin() {
     this.route.navigate(['/AdminLogin']);
   }
-  Continue(){
-    this.isContinue=true;
-    this.isSurvey=false;
+  Continue() {
+    this.isContinue = true;
+    this.isSurvey = false;
   }
 
+  get name(): FormGroup {
+    return this.EmployeeSurveyForm.get('EvaluatorName') as FormGroup;
+  }
+  get regis(): FormGroup {
+    return this.EmployeeSurveyForm.get('Registration_no') as FormGroup;
+  }
+  get designation_Evaluator(): FormGroup {
+    return this.EmployeeSurveyForm.get('Designation_Evaluator') as FormGroup;
+  }
+  get Organization_Name(): FormGroup {
+    return this.EmployeeSurveyForm.get('Organization_Name') as FormGroup;
+  }
+  get EmployerName(): FormGroup {
+    return this.EmployeeSurveyForm.get('EmployerName') as FormGroup;
+  }
+  get Designation_Employer(): FormGroup {
+    return this.EmployeeSurveyForm.get('Designation_Employer') as FormGroup;
+  }
   get email(): FormGroup {
     return this.EmployeeSurveyForm.get('Email') as FormGroup;
+  }
+  get mobileNo(): FormGroup {
+    return this.EmployeeSurveyForm.get('Contact_no') as FormGroup;
   }
 }

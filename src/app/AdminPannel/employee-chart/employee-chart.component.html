@@ -1,5 +1,6 @@
-<button class="btn btn-success btnmain" (click)="onBack()">Go Back</button>
-<div id="chartContainer" style="margin-left: auto; margin-right: auto ;width: 100%;">
+<button class="btn btn-success btnmain " (click)="onBack()">Go Back</button>
+<button class="btn btn-success btnmain" (click)="takePrint()">Print</button>
+<div #content id="chartContainer" style="margin-left: auto; margin-right: auto ;width: 100%;">
   <h1 style="text-align: center;">EMPLOYEES REPORT</h1>
 
 <div class="chartitemcan">
@@ -93,11 +94,7 @@
   <canvas id="canvas18" >{{ chart18 }}</canvas
   ><br />
   </div>
-  <div class="chartCan">
-    <h1>Question19</h1>
-  <canvas id="canvas19" >{{ chart19 }}</canvas
-  ><br />
-  </div>
+  
   <!-- <h1>Question2</h1>
   <canvas id="canvas2" class="item">{{ chart2 }}</canvas>
   <h1>Question3</h1>

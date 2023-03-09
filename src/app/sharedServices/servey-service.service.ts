@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ServeyServiceService {
-  private baseURL: string = 'https://localhost:44314/api/Survey/';
+  private baseURL: string = 'https://localhost:7042/api/Survey/';
   currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
   jwtHelperService = new JwtHelperService();
   constructor(private http: HttpClient, private route: Router) {}
@@ -33,12 +33,24 @@ export class ServeyServiceService {
 
     return this.http.get(this.baseURL + 'GetAllStudent/' + Id);
   }
+  public deleteEntityStudent(Id: any) {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.delete(this.baseURL + 'deleteStudentEntity/' + Id);
+  }
 
   public getEmployeeRes(Id: any) {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
     return this.http.get(this.baseURL + 'GetAllEmployee/' + Id);
+  }
+  public deleteEntityEmployer(Id: any) {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.delete(this.baseURL + 'deleteEmployeeEntity/' + Id);
   }
 
   login(user: Array<string>): Observable<any> {
@@ -178,12 +190,11 @@ export class User {
   Question_18!: string;
   Question_19!: string;
   Question_20!: string;
-  Question_21!: string;
   StudentName!: string;
   Department!: string;
   Organization_Name!: string;
   Organization_Position!: string;
   Graduation_year!: number;
-
+  Comments!:string;
   Email!: string;
 }
