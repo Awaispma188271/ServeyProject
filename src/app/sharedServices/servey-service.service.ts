@@ -37,7 +37,7 @@ export class ServeyServiceService {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.delete(this.baseURL + 'deleteStudentEntity/' + Id);
+    return this.http.post(this.baseURL + 'deleteStudentEntity/' + Id,headers);
   }
 
   public getEmployeeRes(Id: any) {
@@ -50,7 +50,7 @@ export class ServeyServiceService {
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.delete(this.baseURL + 'deleteEmployeeEntity/' + Id);
+    return this.http.post(this.baseURL + 'deleteEmployeeEntity/' + Id,headers);
   }
 
   login(user: Array<string>): Observable<any> {
